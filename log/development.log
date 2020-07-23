@@ -1395,3 +1395,189 @@ Processing by TasksController#new as HTML
 Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 3850)
 
 
+Started GET "/tasks/2/edit" for ::1 at 2020-07-23 20:14:10 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:12:in `edit'
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/edit.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1276)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 81ms (Views: 21.8ms | ActiveRecord: 1.4ms | Allocations: 11844)
+
+
+Started PATCH "/tasks/2" for ::1 at 2020-07-23 20:14:28 -0300
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"Wkr1D04H/3Tg4rosgf5EdGSh2QQzvtY/ndyeam8t4KCXPO6qaomGP/Fi2B15Atjcy4KvH7nrV49vy+yUfwg8ZA==", "task"=>{"description"=>"Comprar refri", "status"=>"1"}, "commit"=>"Editar", "id"=>"2"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:16:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:17:in `update'
+  [1m[36mTask Update (0.6ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "Comprar refri"], ["status", 1], ["updated_at", "2020-07-23 23:14:28.893292"], ["id", 2]]
+  ↳ app/controllers/tasks_controller.rb:17:in `update'
+  [1m[35m (86.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:17:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 87.4ms | Allocations: 4412)
+
+
+Started GET "/" for ::1 at 2020-07-23 20:14:28 -0300
+Processing by HomeController#welcome as HTML
+  Rendering home/welcome.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/home/welcome.html.erb:4
+  Rendered home/welcome.html.erb within layouts/application (Duration: 3.0ms | Allocations: 919)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.4ms | Allocations: 4604)
+
+
+Started GET "/" for ::1 at 2020-07-23 20:39:09 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#welcome as HTML
+  Rendering home/welcome.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/home/welcome.html.erb:4
+  Rendered home/welcome.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4143)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 42.6ms | ActiveRecord: 0.9ms | Allocations: 10699)
+
+
+Started GET "/tasks/2/edit" for ::1 at 2020-07-23 20:39:11 -0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1297)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2254)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @task do |f| %>
+    2:     <%= f.label :description, 'Descrição' %>
+    3:     <%= f.text_field :description %>
+    4:     <%= f.label :status, 'Status' %>
+  
+app/views/tasks/edit.html.erb:1
+Started GET "/" for ::1 at 2020-07-23 20:39:22 -0300
+Processing by HomeController#welcome as HTML
+  Rendering home/welcome.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/home/welcome.html.erb:4
+  Rendered home/welcome.html.erb within layouts/application (Duration: 4.0ms | Allocations: 783)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.3ms | Allocations: 3982)
+
+
+Started GET "/tasks/2/edit" for ::1 at 2020-07-23 20:39:29 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:12:in `edit'
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 953)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 8.2ms | ActiveRecord: 1.1ms | Allocations: 8433)
+
+
+Started PATCH "/tasks/2" for ::1 at 2020-07-23 20:39:33 -0300
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"Zul9WY6tv9Iur96/53w0vNjHAi2JXjyBMMqt5Bp+bDern2b8qiPGmT8vvI4fgKgUd+R0NgMLvTHC3d8aCluw8w==", "task"=>{"description"=>"Comprar suco", "status"=>"1"}, "commit"=>"Editar", "id"=>"2"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:16:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:17:in `update'
+  [1m[36mTask Update (0.5ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "Comprar suco"], ["updated_at", "2020-07-23 23:39:33.891813"], ["id", 2]]
+  ↳ app/controllers/tasks_controller.rb:17:in `update'
+  [1m[35m (71.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:17:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 87ms (ActiveRecord: 72.1ms | Allocations: 4389)
+
+
+Started GET "/" for ::1 at 2020-07-23 20:39:33 -0300
+Processing by HomeController#welcome as HTML
+  Rendering home/welcome.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/home/welcome.html.erb:4
+  Rendered home/welcome.html.erb within layouts/application (Duration: 3.1ms | Allocations: 776)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.4ms | Allocations: 4029)
+
+
+Started GET "/" for ::1 at 2020-07-23 20:52:29 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#welcome as HTML
+  Rendering home/welcome.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/home/welcome.html.erb:4
+  Rendered home/welcome.html.erb within layouts/application (Duration: 35.2ms | Allocations: 4361)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 77.0ms | ActiveRecord: 1.4ms | Allocations: 10913)
+
+
+Started DELETE "/tasks/1" for ::1 at 2020-07-23 20:52:41 -0300
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xxQ26QxFe6dFGEJikWgviMT/t90R0xxeU0w5maqU+qjwqD1i6a2CtMWZkecIEkkLylwC5wfz5et3M/ZojJpmfQ==", "id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:22:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:23:in `destroy'
+  [1m[36mTask Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:23:in `destroy'
+  [1m[35m (181.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:23:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 192ms (ActiveRecord: 182.0ms | Allocations: 4199)
+
+
+Started GET "/" for ::1 at 2020-07-23 20:52:41 -0300
+Processing by HomeController#welcome as HTML
+  Rendering home/welcome.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/home/welcome.html.erb:4
+  Rendered home/welcome.html.erb within layouts/application (Duration: 2.4ms | Allocations: 865)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 4001)
+
+
+Started GET "/tasks/2/edit" for ::1 at 2020-07-23 20:52:47 -0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:12:in `edit'
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/edit.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1134)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 0.3ms | Allocations: 5372)
+
+
+Started PATCH "/tasks/2" for ::1 at 2020-07-23 20:52:53 -0300
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"7YdGZWbczE+GjfBN4oJ9H+372t6/r7Jvra/V+o/9wf0g8V3AQlK1BJcNknwafuG3QtisxTX6M99fuKcEn9gdOQ==", "task"=>{"description"=>"Comprar pão", "status"=>"1"}, "commit"=>"Editar", "id"=>"2"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:16:in `update'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:17:in `update'
+  [1m[36mTask Update (0.7ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "Comprar pão"], ["updated_at", "2020-07-23 23:52:53.025977"], ["id", 2]]
+  ↳ app/controllers/tasks_controller.rb:17:in `update'
+  [1m[35m (113.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:17:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 128ms (ActiveRecord: 114.3ms | Allocations: 4421)
+
+
+Started GET "/" for ::1 at 2020-07-23 20:52:53 -0300
+Processing by HomeController#welcome as HTML
+  Rendering home/welcome.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/home/welcome.html.erb:4
+  Rendered home/welcome.html.erb within layouts/application (Duration: 3.3ms | Allocations: 864)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 3999)
+
+
